@@ -5,7 +5,6 @@
 ///////////////Menu Items (MVP)///////////////////
 const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
 const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1a: Make a function that builds objects🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Add to the function createMenuItems below so it will create objects following the same format found above for latte and breakfastBurrito (name, price, category).  
 The function should:
@@ -15,9 +14,11 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(name, price, category){
+    return{name, price, category};
 }
+const tacos = {name: "tacos", price: 8, category:"lunch"};
+console.log(tacos);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -28,6 +29,15 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+const fish = {name: "fish", price: 8, category:"lunch"};
+const chicken = {name: "chicken", price: 10, category:"lunch"};
+const hamburger= {name: "burger", price: 9, category:"lunch"};
+function createMenuItem(name, price, category){
+  return {name, price, category};
+}
+console.log(chicken);
+console.log(fish);
+console.log(hamburger);
 
 
 
@@ -43,12 +53,21 @@ Using the burger object below do the following:
 
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
+// method
 const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
   
+  discount: function (string){
+    if(string === teacher || string === student){
+    return this.price * 0.25}
+    else {return this.price * 0.10;}
+  }
+   
+ 
 }
+console.log("task 2", string(teacher));
 
 
 
@@ -68,7 +87,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
+console.log("task 3", reviews[5].feedback );
 
 
 
@@ -77,7 +96,8 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
-
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays "
+console.log("task 7", reviews[7].feedback);
 
 
 
@@ -91,10 +111,13 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(name, feedback, rating ){
+  return {name, rating, feedback}
+  
 }
-
+console.log("task 5", addReview('Daniela', 5, 'Beautiful atmosphere and wonderful vegan options!' ));
+reviews.push({name: 'daniela', rating: 5, feedback:'Beautiful atmosphere and wonderful vegan options!'});
+console.log(reviews);
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
 
